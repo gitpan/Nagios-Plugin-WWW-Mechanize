@@ -7,7 +7,6 @@ use FindBin qw($Bin);
 use lib "$Bin/lib";
 
 use Test::More;
-use Test::Deep;
 
 plan tests => 4;
 
@@ -20,4 +19,4 @@ $np->timer_start;
 sleep 4;
 $np->timer_end;
 cmp_ok( $np->total_time, ">=", 4, "Timer above 4 seconds" );
-cmp_ok( $np->total_time, "<", 4.05, "Allow 0.05 seconds latency" );
+cmp_ok( $np->total_time, "<", 4.09, "Allow 0.09 seconds latency" );
